@@ -23,7 +23,8 @@ h2 {
   font-size: 1.5rem;
 }
 
-.add-scores-part, .recent-scores-part {
+.add-scores-part,
+.recent-scores-part {
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
