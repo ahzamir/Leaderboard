@@ -55,12 +55,12 @@ input {
   margin-top: 1rem;
 }
 
-.scores div:nth-child(odd) {
-  background-color: rgb(221, 218, 218);
-}
-
 .scores div {
   padding: 0.5rem;
+}
+
+.scores div:nth-child(odd) {
+  background-color: rgb(221, 218, 218);
 }
 
 .add-scores-part h2 {

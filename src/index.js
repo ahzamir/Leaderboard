@@ -35,10 +35,8 @@ const getData = async () => {
 const addData = async () => {
   const users = await getData();
   const allUsersPart = document.getElementById('scores');
-  // const usersScore = document.createElement('div');
   users.result.forEach((user) => {
     const userInfo = `<div>${user.user}: ${user.score}</div>`;
-    // usersScore.insertAdjacentHTML('beforeend', userInfo);
     allUsersPart.insertAdjacentHTML('beforeend', userInfo);
   });
 };
