@@ -2,6 +2,7 @@ import './style.css';
 
 const gameId = 'LYADjurhsRv39Hwpf4Ya';
 const gameForm = document.getElementById('gameForm');
+
 gameForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const user = document.getElementById('userName');
@@ -20,3 +21,15 @@ gameForm.addEventListener('submit', async (e) => {
   const result = await response.json();
   console.log(result);
 })
+const getData = async (e) => {
+  const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores/`, {
+    method: 'GET',
+  });
+  const result = await response.json();
+  console.log(result);
+};
+const refreshButton = document.getElementById('refresh');
+refreshButton.addEventListener('click', getData);
+
+
+
