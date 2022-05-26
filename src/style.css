@@ -55,11 +55,11 @@ input {
   margin-top: 1rem;
 }
 
-.scores p {
-  padding: 0.3rem;
+.scores div {
+  padding: 0.5rem;
 }
 
-.score1 {
+.scores div:nth-child(odd) {
   background-color: rgb(221, 218, 218);
 }
 

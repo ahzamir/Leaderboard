@@ -14,21 +14,22 @@
     <div class="recent-scores-part">
       <div class="recent-scores-header">
         <h2>Recent scores</h2>
-        <button type="button">Refresh</button>
+        <button type="button" id="refresh">Refresh</button>
       </div>
-      <div class="scores">
-        <p>Name: 100</p>
-        <p class="score1">Name: 100</p>
-        <p>Name: 100</p>
-        <p class="score1">Name: 100</p>
-        <p>Name: 100</p>
+      <div class="scores" id="scores">
       </div>
     </div>
     <div class="add-scores-part">
       <h2>Add your score</h2>
-      <input type="text" placeholder="Your name">
-      <input type="text" placeholder="Your score">
-      <button type="submit">Submit</button>
+      <form id="gameForm">
+        <label for="userName">
+          <input type="text" id="userName" placeholder="Your name">
+        </label>
+        <label for="userScore">
+          <input type="text" id="userScore" placeholder="Your score">
+        </label>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   </section>
 </body>
