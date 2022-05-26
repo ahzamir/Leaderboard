@@ -47,7 +47,7 @@ button {
 button:hover {
   cursor: pointer;
   background-color: #111827;
-  color:lightskyblue;
+  color: lightskyblue;
 }
 
 input {
@@ -60,7 +60,7 @@ input {
 
 input:focus {
   background-color: #111827;
-  color:#eee;
+  color: #eee;
 }
 
 .scores {
