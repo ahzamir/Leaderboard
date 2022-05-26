@@ -1,6 +1,6 @@
 import './style.css';
 
-const gameId = 'LYADjurhsRv39Hwpf4Ya';
+const gameId = 'CsVjrIhDWuIKDeZ1pqQ';
 const gameForm = document.getElementById('gameForm');
 
 gameForm.addEventListener('submit', async (e) => {
@@ -20,16 +20,38 @@ gameForm.addEventListener('submit', async (e) => {
   });
   const result = await response.json();
   console.log(result);
-})
-const getData = async (e) => {
+  user.value = '';
+  score.value = '';
+});
+
+const getData = async () => {
   const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores/`, {
     method: 'GET',
   });
   const result = await response.json();
-  console.log(result);
+  return result;
 };
+
+const addData = async () => {
+  const users = await getData();
+  const allUsersPart = document.getElementById('scores');
+  // const usersScore = document.createElement('div');
+  users.result.forEach((user) => {
+    const userInfo = `<div>${user.user}: ${user.score}</div>`;
+    // usersScore.insertAdjacentHTML('beforeend', userInfo);
+    allUsersPart.insertAdjacentHTML('beforeend', userInfo);
+  });
+};
+
+const refreshData = async () => {
+  const allUsersPart = document.getElementById('scores');
+  allUsersPart.innerHTML = '';
+  await addData();
+};
+
 const refreshButton = document.getElementById('refresh');
-refreshButton.addEventListener('click', getData);
+refreshButton.addEventListener('click', refreshData);
 
-
-
+window.addEventListener('DOMContentLoaded', async () => {
+  await addData();
+});
