@@ -7,7 +7,7 @@
 
 ## 🖥️ Live Demo
 
-[Leaderboard]()
+[Leaderboard](https://ahzamir.github.io/Leaderboard/)
 
 ## Built With
 
