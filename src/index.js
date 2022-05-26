@@ -9,19 +9,19 @@ gameForm.addEventListener('submit', async (e) => {
   const score = document.getElementById('userScore');
   const gameFormData = {
     user: user.value,
-    score: parseInt(score.value),
+    score: parseInt(score.value, 10),
   };
   const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores/`, {
     method: 'POST',
     body: JSON.stringify(gameFormData),
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
   });
   const result = await response.json();
-  console.log(result);
   user.value = '';
   score.value = '';
+  return result;
 });
 
 const getData = async () => {
